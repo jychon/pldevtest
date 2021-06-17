@@ -1,0 +1,6 @@
+#Files that doesn't need
+*.exe
+
+#Folders that doesn't need
+/.vscode
+/Debug
