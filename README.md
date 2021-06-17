@@ -1,4 +1,4 @@
-# pldevtest
+# I urge you to edit existing files, and come back and pull the newly edited files from someone else. This will introduce you to managing merge conflicts and making sure your branch is up to date with the main branch
 
 testing new changes. updating readme.
 
