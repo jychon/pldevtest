@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
-// #include <thread>
+#include <thread>
+#include<cstdlib>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -22,7 +23,9 @@ double timeSinceCreation(string &filename)
     if (file.is_open())
     {
         double inTime;
-        file >> inTime;
+        string inLine;
+        getline (file, inLine);
+        inTime = stoi (inLine);
         // hour orgTime = static_cast<hour>(inTime);
         auto cur_clock = chrono::high_resolution_clock::now();
         chrono::hours cur_time = chrono::duration_cast<chrono::hours>(cur_clock.time_since_epoch());
@@ -32,9 +35,9 @@ double timeSinceCreation(string &filename)
     return -1;
 }
 
-// int main(){
-//     string file_name = "time created.txt";
-//     putTimeinFiles(file_name);
-//     // this_thread::sleep_for(chrono::duration<unsigned int>(2));
-//     cout << "It has been " << timeSinceCreation(file_name) << " hours since this file was created" << endl;
-// }
+int main(){
+    string file_name = "time created.txt";
+    putTimeinFiles(file_name);
+    this_thread::sleep_for(chrono::duration<unsigned int>(2));
+    cout << "It has been " << timeSinceCreation(file_name) << " hours since this file was created" << endl;
+}
