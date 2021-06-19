@@ -1,3 +1,3 @@
 int foo (int n) {
-    return n+2;
+    return n+5;
 }
